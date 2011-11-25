@@ -5,29 +5,29 @@ Examples
 
 GET
 
-`
-var data = { 'key': key, 'from': from, 'to': to, 'coordSys': 'RT90', 'apiVersion': 2.1 }
-ajaxmee('GET', url, data,
+
+     var data  = { 'key': key, 'from': from, 'to': to, 'coordSys': 'RT90', 'apiVersion': 2.1 }
+     ajaxmee('GET', url, data,
         function(data) {
             console.log('ok', data)
         },
         function(status, statusText) {
             console.log('error', status, statusText)
         })
-`
+
 
 POST
 
-`
-var data = { 'key': key, 'from': from, 'to': to, 'coordSys': 'RT90', 'apiVersion': 2.1 }
-ajaxmee('POST', url, data,
+
+    var data = { 'key': key, 'from': from, 'to': to, 'coordSys': 'RT90', 'apiVersion': 2.1 }
+    ajaxmee('POST', url, data,
         function(data) {
             console.log('ok', data)
         },
         function(status, statusText) {
             console.log('error', status, statusText)
         })
-`
+
 
 
 
