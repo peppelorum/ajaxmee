@@ -21,6 +21,13 @@ var ajaxmee = function(method, url, params, successCallback, errorCallback) {
 
     var init = function(method, url, params, successCallback, errorCallback) {
 
+        // Extract additional headers if they were provided
+        var headers;
+        if (params.length == 2) {
+            headers = params[0];
+            params = params[1];
+        }
+
         params = serialize(params)
         var doc = new XMLHttpRequest();
         console.log(method + " " + url);
@@ -44,6 +51,10 @@ var ajaxmee = function(method, url, params, successCallback, errorCallback) {
         }
 
         doc.open(method, url);
+        for (var key in headers) {
+            doc.setRequestHeader(String(key), String(headers[key]));
+        }
+
         if (params.length > 0) {
             doc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             doc.setRequestHeader("Content-Length", String(params.length));
